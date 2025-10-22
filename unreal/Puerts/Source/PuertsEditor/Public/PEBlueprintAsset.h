@@ -28,11 +28,7 @@ struct FPEGraphTerminalType
     FName PinCategory;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PEBlueprintAsset")
-#if ENGINE_MAJOR_VERSION > 4
     TObjectPtr<UObject> PinSubCategoryObject;
-#else
-    UObject* PinSubCategoryObject;
-#endif
 };
 
 USTRUCT(BlueprintType)
@@ -47,11 +43,7 @@ struct FPEGraphPinType
     FName PinCategory;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PEBlueprintAsset")
-#if ENGINE_MAJOR_VERSION > 4
     TObjectPtr<UObject> PinSubCategoryObject;
-#else
-    UObject* PinSubCategoryObject;
-#endif
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "PEBlueprintAsset")
     int PinContainerType;
@@ -73,25 +65,13 @@ class PUERTSEDITOR_API UPEBlueprintAsset : public UObject
 
 public:
     UPROPERTY(BlueprintReadOnly, Category = "PEBlueprintAsset")
-#if ENGINE_MAJOR_VERSION > 4
     TObjectPtr<UClass> GeneratedClass;
-#else
-    UClass* GeneratedClass;
-#endif
 
     UPROPERTY(BlueprintReadOnly, Category = "PEBlueprintAsset")
-#if ENGINE_MAJOR_VERSION > 4
     TObjectPtr<UBlueprint> Blueprint;
-#else
-    UBlueprint* Blueprint;
-#endif
 
     UPROPERTY(BlueprintReadOnly, Category = "PEBlueprintAsset")
-#if ENGINE_MAJOR_VERSION > 4
     TObjectPtr<UPackage> Package;
-#else
-    UPackage* Package;
-#endif
 
     UPROPERTY(BlueprintReadOnly, Category = "PEBlueprintAsset")
     bool NeedSave;
